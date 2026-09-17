@@ -13,7 +13,7 @@ export default function ContactPage() {
           <div className="text-center max-w-2xl mx-auto mb-16">
             <h1 className="font-heading text-4xl md:text-5xl text-[#17231D] mb-6">Get in Touch</h1>
             <p className="text-[#68746C] text-lg">
-              Have questions about our Ayurvedic products or need guidance on your wellness journey? We're here to help.
+              Have questions about our community or need guidance on your wellness journey? We're here to help.
             </p>
           </div>
 
@@ -28,7 +28,7 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-heading text-xl text-[#17231D] mb-2">Visit Us</h3>
                     <p className="text-[#68746C] leading-relaxed">
-                      123 Ayurveda Marg, Heritage Wellness District, <br/> New Delhi, 110001
+                      FitLife Wellness Nutrition Center, <br/> Sector 8, Noida
                     </p>
                   </div>
                 </div>
@@ -55,7 +55,7 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-heading text-xl text-[#17231D] mb-2">Email Us</h3>
                     <p className="text-[#68746C]">We usually respond within 24 hours.</p>
-                    <p className="text-[#174A3A] font-semibold mt-2">hello@fitlifeayurvedic.com</p>
+                    <p className="text-[#174A3A] font-semibold mt-2">hello@fitlifewellness.com</p>
                   </div>
                 </div>
               </div>

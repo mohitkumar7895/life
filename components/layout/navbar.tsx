@@ -22,10 +22,10 @@ export default function Navbar() {
 
   const navLinks = [
     { name: 'Home', href: '/' },
+    { name: 'About Us', href: '/about' },
+    { name: 'Wellness Goals', href: '/wellness' },
+    { name: 'Community', href: '/community' },
     { name: 'Shop', href: '/shop' },
-    { name: 'Our Story', href: '/about' },
-    { name: 'Ayurveda', href: '/ayurveda' },
-    { name: 'Wellness', href: '/wellness' },
     { name: 'FAQ', href: '/faq' },
     { name: 'Contact', href: '/contact' },
   ];
@@ -33,7 +33,7 @@ export default function Navbar() {
   return (
     <>
       <div className="bg-[#174A3A] text-[#FAF7EF] text-center py-2 text-sm font-medium tracking-wide">
-        Pure Ayurvedic Wellness • Natural Ingredients • Trusted Quality
+        Health Education • Healthy Habits • Guidance & Community
       </div>
       
       <header
@@ -54,10 +54,10 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex flex-col items-center justify-center">
             <span className="font-heading text-2xl md:text-3xl font-bold text-[#174A3A] leading-none">
-              FIT LIFE
+              FitLife Wellness
             </span>
             <span className="text-[10px] md:text-xs tracking-[0.2em] text-[#C9A45C] font-semibold mt-1 uppercase">
-              Ayurvedic
+              Sector 8, Noida
             </span>
           </Link>
 
@@ -123,10 +123,10 @@ export default function Navbar() {
               <div className="flex justify-between items-center mb-10">
                 <Link href="/" className="flex flex-col" onClick={() => setIsMobileMenuOpen(false)}>
                   <span className="font-heading text-2xl font-bold text-[#174A3A] leading-none">
-                    FIT LIFE
+                    FitLife Wellness
                   </span>
                   <span className="text-[10px] tracking-[0.2em] text-[#C9A45C] font-semibold mt-1 uppercase">
-                    Ayurvedic
+                    Sector 8, Noida
                   </span>
                 </Link>
                 <button
@@ -207,7 +207,7 @@ export default function Navbar() {
               <div className="mt-8">
                 <p className="text-sm font-medium text-[#68746C] mb-3 uppercase tracking-wider">Popular Searches</p>
                 <div className="flex flex-wrap gap-2">
-                  {['Ashwagandha', 'Immunity Boost', 'Digestive Health', 'Hair Oils'].map(term => (
+                  {['Nutrition Plans', 'Healthy Habits', 'Weight Management', 'Wellness Community'].map(term => (
                     <span key={term} className="bg-white border border-[#174A3A]/10 px-4 py-2 rounded-full text-sm text-[#17231D] hover:border-[#174A3A] cursor-pointer transition-colors">
                       {term}
                     </span>

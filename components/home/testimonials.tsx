@@ -9,7 +9,7 @@ const testimonials = [
     name: 'Priya Sharma',
     location: 'Mumbai, MH',
     rating: 5,
-    text: 'I\'ve been using the Ashwagandha capsules for a month and the difference in my stress levels is remarkable. The quality feels genuinely premium.',
+    text: 'Joining the FitLife Wellness community completely changed my approach to health. The guidance I received helped me build sustainable habits.',
     image: '/images/testimonials/t1.jpg',
     isDemo: true,
   },
@@ -18,7 +18,7 @@ const testimonials = [
     name: 'Rahul Verma',
     location: 'Delhi, DL',
     rating: 5,
-    text: 'The Triphala formula is the only thing that has consistently worked for my digestion. Love the packaging and the ethical sourcing.',
+    text: 'I used to struggle with consistency, but the accountability here is amazing. I feel more energetic and focused than ever before.',
     image: '/images/testimonials/t2.jpg',
     isDemo: true,
   },
@@ -27,7 +27,7 @@ const testimonials = [
     name: 'Anjali Desai',
     location: 'Bangalore, KA',
     rating: 4,
-    text: 'Beautiful products. The hair oil has completely stopped my hair fall. It smells authentic and herbal, not like artificial perfumes.',
+    text: 'The focus on balanced nutrition instead of restrictive diets was a game changer for me. I finally have a lifestyle I can maintain.',
     image: '/images/testimonials/t3.jpg',
     isDemo: true,
   },
@@ -52,7 +52,7 @@ export default function Testimonials() {
             Stories of Wellness
           </h2>
           <p className="text-[#68746C] max-w-2xl mx-auto">
-            Real experiences from our community on their Ayurvedic journey.
+            Real experiences from our community on their wellness journey.
           </p>
         </div>
 

@@ -2,14 +2,14 @@ import Image from "next/image";
 
 export default function HowItWorks() {
   const steps = [
-    { num: '01', title: 'Choose Your Wellness Product', desc: 'Browse our curated collection of Ayurvedic solutions.' },
-    { num: '02', title: 'Place Your Order', desc: 'Secure and simple checkout process.' },
-    { num: '03', title: 'Receive At Your Doorstep', desc: 'Fast, reliable delivery straight to you.' },
-    { num: '04', title: 'Make Wellness A Habit', desc: 'Incorporate into your daily routine for best results.' },
+    { num: '01', title: 'Visit Our Center', desc: 'Join us at our Sector 8, Noida location.' },
+    { num: '02', title: 'Connect & Learn', desc: 'Meet the community and understand healthy habits.' },
+    { num: '03', title: 'Set Your Goals', desc: 'Get guidance on nutrition and physical activity.' },
+    { num: '04', title: 'Stay Consistent', desc: 'Track your progress and live fit every day.' },
   ];
 
   return (
-    <section className="py-24 bg-[#FAF7EF]">
+    <section className="py-24 bg-white">
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="relative h-[600px] rounded-3xl overflow-hidden shadow-2xl hidden lg:block">
@@ -25,7 +25,7 @@ export default function HowItWorks() {
               Simple Steps to <br/><span className="text-[#3F7655]">Better Wellness</span>
             </h2>
             <p className="text-[#68746C] mb-12">
-              Embarking on your Ayurvedic journey should be as natural and stress-free as the products themselves. Here's how it works:
+              Embarking on your wellness journey doesn't have to be complicated. Here's how we help you get started:
             </p>
             <div className="space-y-12">
               {steps.map((step, idx) => (

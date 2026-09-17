@@ -7,24 +7,24 @@ import {
 
 const faqs = [
   {
-    question: "What is Ayurveda?",
-    answer: "Ayurveda is a 5000-year-old system of natural healing that has its origins in the Vedic culture of India. It emphasizes balance in all areas of life and uses natural herbs, diet, and lifestyle practices to promote optimal wellness."
+    question: "What is FitLife Wellness?",
+    answer: "FitLife Wellness is a health and wellness community dedicated to helping people build healthier habits through simple, sustainable lifestyle changes like better nutrition and regular activity."
   },
   {
-    question: "How do I choose a product?",
-    answer: "You can browse our 'Shop By Wellness Goal' section if you have a specific area you want to support (e.g., immunity, sleep, digestion). We always recommend consulting with a healthcare practitioner for personalized advice."
+    question: "How do I get started?",
+    answer: "You can start by visiting our Nutrition Center in Sector 8, Noida. We'll help you understand your wellness goals and guide you from there."
   },
   {
-    question: "How should Ayurvedic products be used?",
-    answer: "Each product has specific usage instructions on its label and product page. Generally, they are taken with water or warm milk. Consistency is key in Ayurveda for the best results."
+    question: "Do I need to follow a strict diet?",
+    answer: "No! At FitLife Wellness, we don't believe in complicated diets or perfection. We believe in building simple, sustainable habits that fit into your everyday life."
   },
   {
-    question: "Do you offer Cash on Delivery (COD)?",
-    answer: "Yes, we offer Cash on Delivery for most pincodes across India. You can select this option during checkout."
+    question: "Can I join if I'm a beginner?",
+    answer: "Absolutely! Our community is welcoming to everyone, whether you are just starting your fitness journey or looking to improve your current habits."
   },
   {
-    question: "What is your return policy?",
-    answer: "We offer a 7-day return policy for sealed, unopened products. Please contact our support team to initiate a return request."
+    question: "Where are you located?",
+    answer: "Our Nutrition Center is located in Sector 8, Noida. We encourage you to visit us and join our community."
   }
 ];
 
@@ -37,7 +37,7 @@ export default function FAQ() {
             Frequently Asked Questions
           </h2>
           <p className="text-[#68746C]">
-            Everything you need to know about our products and services.
+            Everything you need to know about our community and services.
           </p>
         </div>
 

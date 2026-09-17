@@ -19,8 +19,8 @@ export default function AboutPage() {
             />
           </div>
           <div className="relative z-10 text-white max-w-3xl px-4">
-            <h1 className="font-heading text-5xl md:text-6xl mb-6">Our Journey</h1>
-            <p className="text-xl text-[#F2EBDD]">Bringing 5000 years of Ayurvedic wisdom into the modern world.</p>
+            <h1 className="font-heading text-5xl md:text-6xl mb-6">Our Mission</h1>
+            <p className="text-xl text-[#F2EBDD]">Helping you build a healthier lifestyle, one day at a time.</p>
           </div>
         </div>
 
@@ -30,10 +30,10 @@ export default function AboutPage() {
             <div>
               <h2 className="font-heading text-4xl text-[#17231D] mb-6">The Philosophy</h2>
               <p className="text-[#68746C] text-lg leading-relaxed mb-6">
-                At Fit Life Ayurvedic, we believe that true wellness stems from a deep connection with nature. Our bodies are perfectly capable of healing themselves when provided with the right botanical support and balance.
+                At FitLife Wellness, we believe that good health is not about complicated diets or short-term solutions. It is about building simple, sustainable habits that can become a part of your everyday life.
               </p>
               <p className="text-[#68746C] text-lg leading-relaxed">
-                We travel across India to source the most potent herbs directly from their natural habitats. By combining this raw natural power with modern extraction techniques, we create formulations that are both highly effective and completely safe.
+                Our Nutrition Center in Sector 8, Noida is a welcoming community where people can come together, learn about healthy living, track their progress, and receive guidance and encouragement on their wellness journey.
               </p>
             </div>
             <div className="relative h-[500px] rounded-3xl overflow-hidden shadow-xl border border-[#174A3A]/10">
@@ -51,22 +51,22 @@ export default function AboutPage() {
               <div className="w-16 h-16 bg-[#F2EBDD] rounded-full flex items-center justify-center mx-auto mb-6">
                 <Leaf className="w-8 h-8 text-[#3F7655]" />
               </div>
-              <h3 className="font-heading text-2xl text-[#17231D] mb-4">Pure Ingredients</h3>
-              <p className="text-[#68746C]">No synthetic additives, fillers, or artificial colors. Just pure, unadulterated nature.</p>
+              <h3 className="font-heading text-2xl text-[#17231D] mb-4">Nutrition Guidance</h3>
+              <p className="text-[#68746C]">We focus on balanced nutrition and healthy eating habits tailored to your lifestyle.</p>
             </div>
             <div className="bg-white p-8 rounded-3xl text-center shadow-sm border border-[#174A3A]/5">
               <div className="w-16 h-16 bg-[#F2EBDD] rounded-full flex items-center justify-center mx-auto mb-6">
                 <ShieldCheck className="w-8 h-8 text-[#3F7655]" />
               </div>
-              <h3 className="font-heading text-2xl text-[#17231D] mb-4">Strict Quality</h3>
-              <p className="text-[#68746C]">Every batch is tested for heavy metals, pesticides, and microbial contamination.</p>
+              <h3 className="font-heading text-2xl text-[#17231D] mb-4">Community Support</h3>
+              <p className="text-[#68746C]">A welcoming community that provides accountability and motivation every step of the way.</p>
             </div>
             <div className="bg-white p-8 rounded-3xl text-center shadow-sm border border-[#174A3A]/5">
               <div className="w-16 h-16 bg-[#F2EBDD] rounded-full flex items-center justify-center mx-auto mb-6">
                 <Heart className="w-8 h-8 text-[#3F7655]" />
               </div>
-              <h3 className="font-heading text-2xl text-[#17231D] mb-4">Cruelty Free</h3>
-              <p className="text-[#68746C]">We love all living beings. Our products are never tested on animals.</p>
+              <h3 className="font-heading text-2xl text-[#17231D] mb-4">Long-term Progress</h3>
+              <p className="text-[#68746C]">We don't believe in perfection. We believe in progress and sustainable lifestyle improvements.</p>
             </div>
           </div>
         </div>

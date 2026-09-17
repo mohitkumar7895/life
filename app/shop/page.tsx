@@ -35,8 +35,8 @@ export default async function ShopPage() {
       
       {/* Shop Header */}
       <div className="bg-[#174A3A] py-16 text-center text-white">
-        <h1 className="font-heading text-4xl md:text-5xl mb-4">Shop Wellness</h1>
-        <p className="text-[#F2EBDD]/80">Authentic Ayurvedic formulations for your modern lifestyle.</p>
+        <h1 className="font-heading text-4xl md:text-5xl mb-4">Wellness Programs & Supplements</h1>
+        <p className="text-[#F2EBDD]/80">Everything you need to support your healthy lifestyle.</p>
       </div>
 
       <div className="container mx-auto px-4 md:px-6 py-12 flex flex-col md:flex-row gap-8">
@@ -46,10 +46,10 @@ export default async function ShopPage() {
           <div className="bg-white rounded-2xl border border-[#174A3A]/10 p-6 sticky top-24">
             <h3 className="font-heading font-semibold text-lg text-[#17231D] mb-4">Categories</h3>
             <ul className="space-y-3 text-[#68746C] text-sm">
-              <li><label className="flex items-center gap-2"><input type="checkbox" className="accent-[#174A3A]" /> Digestive Wellness</label></li>
-              <li><label className="flex items-center gap-2"><input type="checkbox" className="accent-[#174A3A]" /> Daily Energy</label></li>
-              <li><label className="flex items-center gap-2"><input type="checkbox" className="accent-[#174A3A]" /> Immunity Support</label></li>
-              <li><label className="flex items-center gap-2"><input type="checkbox" className="accent-[#174A3A]" /> Stress & Relaxation</label></li>
+              <li><label className="flex items-center gap-2"><input type="checkbox" className="accent-[#174A3A]" /> Nutrition Plans</label></li>
+              <li><label className="flex items-center gap-2"><input type="checkbox" className="accent-[#174A3A]" /> Weight Management</label></li>
+              <li><label className="flex items-center gap-2"><input type="checkbox" className="accent-[#174A3A]" /> Supplements</label></li>
+              <li><label className="flex items-center gap-2"><input type="checkbox" className="accent-[#174A3A]" /> Community Memberships</label></li>
             </ul>
             
             <h3 className="font-heading font-semibold text-lg text-[#17231D] mt-8 mb-4">Price Range</h3>

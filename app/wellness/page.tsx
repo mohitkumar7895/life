@@ -9,9 +9,9 @@ export default function WellnessPage() {
       <div className="bg-white min-h-screen pt-24 pb-20">
         <div className="container mx-auto px-4 md:px-6 max-w-4xl">
           <div className="text-center mb-16">
-            <h1 className="font-heading text-5xl md:text-6xl text-[#17231D] mb-6">Holistic Wellness</h1>
+            <h1 className="font-heading text-5xl md:text-6xl text-[#17231D] mb-6">Our Wellness Goals</h1>
             <p className="text-xl text-[#68746C] max-w-2xl mx-auto">
-              Wellness is not just the absence of disease, but a state of complete physical, mental, and social well-being.
+              At FitLife Wellness, we focus on a comprehensive approach to your health through simple, everyday habits.
             </p>
           </div>
           
@@ -20,16 +20,24 @@ export default function WellnessPage() {
           </div>
 
           <div className="space-y-12 text-[#68746C] text-lg leading-relaxed">
-            <p>At Fit Life Ayurvedic, our approach to wellness incorporates diet, lifestyle, herbs, and emotional harmony. We guide you toward natural choices that empower your unique constitution.</p>
+            <p>We educate, motivate and support people in improving their overall lifestyle through better nutrition, regular physical activity, proper hydration, quality sleep, positive mindset and healthy social connections.</p>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
               <div className="bg-[#FAF7EF] p-8 rounded-3xl">
-                <h3 className="font-heading text-2xl text-[#17231D] mb-4">Mindful Eating</h3>
-                <p>Consuming fresh, seasonal, and whole foods that support your digestive fire (Agni).</p>
+                <h3 className="font-heading text-2xl text-[#17231D] mb-4">Balanced Nutrition</h3>
+                <p>Developing healthy eating habits and reaching your weight-management goals without complicated diets.</p>
               </div>
               <div className="bg-[#FAF7EF] p-8 rounded-3xl">
-                <h3 className="font-heading text-2xl text-[#17231D] mb-4">Daily Routine (Dinacharya)</h3>
-                <p>Aligning your daily habits with the natural rhythms of the sun and seasons.</p>
+                <h3 className="font-heading text-2xl text-[#17231D] mb-4">Active Lifestyle</h3>
+                <p>Incorporating regular physical activity and movement for everyday energy.</p>
+              </div>
+              <div className="bg-[#FAF7EF] p-8 rounded-3xl">
+                <h3 className="font-heading text-2xl text-[#17231D] mb-4">Mind & Recovery</h3>
+                <p>Prioritizing better sleep, hydration, and maintaining a positive mindset for stress management.</p>
+              </div>
+              <div className="bg-[#FAF7EF] p-8 rounded-3xl">
+                <h3 className="font-heading text-2xl text-[#17231D] mb-4">Community Connections</h3>
+                <p>Fostering healthy social connections that provide consistency, accountability and long-term improvement.</p>
               </div>
             </div>
           </div>

@@ -3,23 +3,23 @@ import Link from 'next/link';
 
 const goals = [
   { 
-    title: 'Stress & Sleep', 
-    description: 'Calm the nervous system and promote deep, restorative rest.',
+    title: 'Balanced Nutrition', 
+    description: 'Develop healthy eating habits for sustainable wellness.',
     image: '/images/home/goal-stress.jpg'
   },
   { 
-    title: 'Digestion & Detox', 
-    description: 'Optimize your Agni (digestive fire) and gently cleanse.',
+    title: 'Weight Management', 
+    description: 'Achieve your lifestyle goals with guided support.',
     image: '/images/home/goal-digestion.jpg'
   },
   { 
-    title: 'Immunity & Vitality', 
-    description: 'Build strong Ojas for lasting natural defense and energy.',
+    title: 'Physical Activity', 
+    description: 'Incorporate regular movement for energy and vitality.',
     image: '/images/home/goal-immunity.jpg'
   },
   { 
-    title: 'Skin & Hair Care', 
-    description: 'Nourish from within for external glowing beauty.',
+    title: 'Mindset & Sleep', 
+    description: 'Focus on better recovery, hydration, and stress management.',
     image: '/images/home/goal-hair.jpg'
   }
 ];
@@ -30,10 +30,10 @@ export default function WellnessGoals() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-16">
           <h2 className="font-heading text-4xl md:text-5xl text-[#174A3A] mb-4">
-            Wellness, The Ayurvedic Way
+            What We Focus On
           </h2>
           <p className="text-[#68746C] max-w-2xl mx-auto">
-            Find the right support for your unique mind-body constitution and wellness goals.
+            A comprehensive approach to your health through simple, everyday habits.
           </p>
         </div>
 
