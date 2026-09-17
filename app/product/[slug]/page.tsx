@@ -125,7 +125,7 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
               </Button>
 
               {/* Accordions */}
-              <Accordion type="single" collapsible="true" className="w-full mb-12">
+              <Accordion className="w-full mb-12">
                 <AccordionItem value="benefits">
                   <AccordionTrigger className="text-lg font-heading text-[#17231D]">Key Benefits</AccordionTrigger>
                   <AccordionContent>

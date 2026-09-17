@@ -12,7 +12,7 @@ export async function loginAdmin(formData: FormData) {
 
   if (email === ADMIN_EMAIL && password === ADMIN_PASSWORD) {
     // Set a cookie that expires in 1 day
-    cookies().set('admin_token', 'true', {
+    (await cookies()).set('admin_token', 'true', {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
       maxAge: 60 * 60 * 24, // 1 day
@@ -26,6 +26,6 @@ export async function loginAdmin(formData: FormData) {
 }
 
 export async function logoutAdmin() {
-  cookies().delete('admin_token');
+  (await cookies()).delete('admin_token');
   redirect('/admin/login');
 }
