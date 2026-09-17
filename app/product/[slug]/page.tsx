@@ -1,40 +1,45 @@
 import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { ShoppingCart, Heart, ShieldCheck, Leaf, ArrowLeft, Star } from "lucide-react";
+import { ShieldCheck, Leaf, Star } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { query } from "@/lib/db";
+import { notFound } from "next/navigation";
+import { ProductPageActions } from "@/components/ui/product-actions";
 
-// Mock product data for display
-const product = {
-  id: '1',
-  name: 'Ashwagandha Wellness Capsules',
-  slug: 'ashwagandha-wellness-capsules',
-  description: 'Pure KSM-66 Ashwagandha root extract for stress relief, improved energy levels, and overall vitality. Traditionally used in Ayurveda to balance the body and mind.',
-  price: 499,
-  mrp: 699,
-  discount: 28,
-  image: '/images/products/ashwagandha.jpg',
-  rating: 4.8,
-  reviews: 124,
-  stock: 'In Stock',
-  benefits: [
-    'Helps reduce stress and anxiety',
-    'Supports healthy energy levels',
-    'Promotes restful sleep',
-    'Enhances cognitive function'
-  ],
-  ingredients: 'Each capsule contains: Ashwagandha (Withania somnifera) root extract - 500mg (Standardized to 5% withanolides).',
-  usage: 'Take 1-2 capsules twice daily with water or warm milk, preferably after meals, or as directed by your healthcare practitioner.'
-};
-
-export default function ProductDetailPage({ params }: { params: { slug: string } }) {
-  // In a real app, fetch product by slug here
+export default async function ProductDetailPage({ params }: { params: Promise<{ slug: string }> | { slug: string } }) {
+  const resolvedParams = await params;
+  const slug = resolvedParams.slug;
+  
+  const products = await query('SELECT * FROM Products WHERE slug = ? AND isPublished = 1', [slug]) as any[];
+  
+  if (!products || products.length === 0) {
+    notFound();
+  }
+  
+  const dbProduct = products[0];
+  
+  const product = {
+    id: dbProduct.id,
+    name: dbProduct.name,
+    slug: dbProduct.slug,
+    description: dbProduct.description,
+    price: parseFloat(dbProduct.price),
+    mrp: parseFloat(dbProduct.mrp),
+    discount: dbProduct.discount || Math.round(((dbProduct.mrp - dbProduct.price) / dbProduct.mrp) * 100) || 0,
+    image: '/images/products/placeholder.jpg', // Placeholder since DB doesn't have images yet
+    rating: 5,
+    reviews: 0,
+    stock: dbProduct.stock > 0 ? 'In Stock' : 'Out of Stock',
+    benefits: dbProduct.benefits ? JSON.parse(dbProduct.benefits) : [dbProduct.description],
+    ingredients: dbProduct.ingredients || 'Ingredients not specified.',
+    usage: dbProduct.usage_info || 'Usage information not specified.'
+  };
   
   return (
     <>
@@ -106,23 +111,7 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
               </p>
 
               {/* Action Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 mb-10">
-                <div className="flex border border-[#174A3A]/20 rounded-xl h-14 w-full sm:w-32 bg-[#FAF7EF]">
-                  <button className="flex-1 flex items-center justify-center text-[#17231D] hover:bg-gray-100 rounded-l-xl">-</button>
-                  <span className="flex-1 flex items-center justify-center font-bold text-[#17231D]">1</span>
-                  <button className="flex-1 flex items-center justify-center text-[#17231D] hover:bg-gray-100 rounded-r-xl">+</button>
-                </div>
-                <Button className="flex-grow h-14 text-lg bg-transparent border-2 border-[#174A3A] text-[#174A3A] hover:bg-[#174A3A] hover:text-white rounded-xl">
-                  Add to Cart
-                </Button>
-                <Button className="w-14 h-14 flex items-center justify-center bg-[#FAF7EF] border border-[#174A3A]/10 text-[#68746C] hover:text-red-500 rounded-xl">
-                  <Heart className="w-6 h-6" />
-                </Button>
-              </div>
-
-              <Button className="w-full h-14 text-lg bg-[#C9A45C] hover:bg-[#b08d4f] text-white rounded-xl shadow-lg shadow-[#C9A45C]/20 mb-10">
-                Buy It Now
-              </Button>
+              <ProductPageActions product={product} />
 
               {/* Accordions */}
               <Accordion className="w-full mb-12">
@@ -130,12 +119,17 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
                   <AccordionTrigger className="text-lg font-heading text-[#17231D]">Key Benefits</AccordionTrigger>
                   <AccordionContent>
                     <ul className="space-y-2 text-[#68746C]">
-                      {product.benefits.map((b, i) => (
+                      {Array.isArray(product.benefits) ? product.benefits.map((b: string, i: number) => (
                         <li key={i} className="flex items-start gap-2">
                           <Leaf className="w-4 h-4 text-[#3F7655] mt-1 shrink-0" />
                           {b}
                         </li>
-                      ))}
+                      )) : (
+                        <li className="flex items-start gap-2">
+                          <Leaf className="w-4 h-4 text-[#3F7655] mt-1 shrink-0" />
+                          {product.benefits}
+                        </li>
+                      )}
                     </ul>
                   </AccordionContent>
                 </AccordionItem>

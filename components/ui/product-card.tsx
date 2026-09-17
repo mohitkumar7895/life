@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ShoppingCart, Heart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { ProductCardActions } from './product-actions';
 
 export interface ProductCardProps {
   id: string;
@@ -73,15 +74,7 @@ export default function ProductCard({ product }: { product: ProductCardProps }) 
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-3">
-            <Button variant="outline" className="w-full border-[#174A3A] text-[#174A3A] hover:bg-[#174A3A] hover:text-white rounded-xl">
-              <ShoppingCart className="w-4 h-4 mr-2" />
-              Cart
-            </Button>
-            <Button className="w-full bg-[#174A3A] hover:bg-[#3F7655] text-white rounded-xl">
-              Buy Now
-            </Button>
-          </div>
+          <ProductCardActions product={product} />
         </div>
       </div>
     </div>

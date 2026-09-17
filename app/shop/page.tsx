@@ -1,18 +1,23 @@
 import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
 import ProductCard, { ProductCardProps } from "@/components/ui/product-card";
+import { query } from "@/lib/db";
 
-// Placeholder products for the shop page
-const allProducts: ProductCardProps[] = [
-  { id: '1', name: 'Ashwagandha Wellness Capsules', slug: 'ashwagandha-wellness-capsules', description: 'Natural stress relief and daily vitality.', price: 499, mrp: 699, discount: 28, image: '/images/products/ashwagandha.jpg', rating: 5 },
-  { id: '2', name: 'Triphala Digestive Formula', slug: 'triphala-digestive-formula', description: 'Gentle detox and digestive support.', price: 399, mrp: 499, discount: 20, image: '/images/products/triphala.jpg', rating: 4 },
-  { id: '3', name: 'Herbal Hair Care Oil', slug: 'herbal-hair-care-oil', description: 'Nourishing blend of Bhringraj and Amla.', price: 549, mrp: 799, discount: 31, image: '/images/products/hair-oil.jpg', rating: 5 },
-  { id: '4', name: 'Turmeric Curcumin Support', slug: 'turmeric-curcumin-support', description: 'Powerful anti-inflammatory.', price: 599, mrp: 899, discount: 33, image: '/images/products/turmeric.jpg', rating: 5 },
-  { id: '5', name: 'Brahmi Brain Tonic', slug: 'brahmi-brain-tonic', description: 'Enhances cognitive functions and memory.', price: 450, mrp: 550, discount: 18, image: '/images/products/brahmi.jpg', rating: 4 },
-  { id: '6', name: 'Amla Vitamin C Boost', slug: 'amla-vitamin-c-boost', description: 'Immunity booster and skin health.', price: 299, mrp: 399, discount: 25, image: '/images/products/amla.jpg', rating: 4 },
-];
+export default async function ShopPage() {
+  const dbProducts = await query('SELECT * FROM Products WHERE isPublished = 1 ORDER BY createdAt DESC') as any[];
+  
+  const allProducts: ProductCardProps[] = dbProducts.map((p) => ({
+    id: p.id,
+    name: p.name,
+    slug: p.slug,
+    description: p.description,
+    price: parseFloat(p.price),
+    mrp: parseFloat(p.mrp),
+    discount: p.discount || Math.round(((p.mrp - p.price) / p.mrp) * 100) || 0,
+    image: '/images/products/placeholder.jpg',
+    rating: 5,
+  }));
 
-export default function ShopPage() {
   return (
     <>
       <Navbar />

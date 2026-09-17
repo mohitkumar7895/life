@@ -1,55 +1,23 @@
 import ProductCard, { ProductCardProps } from '@/components/ui/product-card';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
+import { query } from '@/lib/db';
 
-const featuredProducts: ProductCardProps[] = [
-  {
-    id: '1',
-    name: 'Ashwagandha Wellness Capsules',
-    slug: 'ashwagandha-wellness-capsules',
-    description: 'Natural stress relief and daily vitality support with pure Ashwagandha root extract.',
-    price: 499,
-    mrp: 699,
-    discount: 28,
-    image: '/images/products/ashwagandha.jpg',
+export default async function FeaturedProducts() {
+  const dbProducts = await query('SELECT * FROM Products WHERE isPublished = 1 ORDER BY createdAt DESC LIMIT 4') as any[];
+  
+  const featuredProducts: ProductCardProps[] = dbProducts.map((p) => ({
+    id: p.id,
+    name: p.name,
+    slug: p.slug,
+    description: p.description,
+    price: parseFloat(p.price),
+    mrp: parseFloat(p.mrp),
+    discount: p.discount || Math.round(((p.mrp - p.price) / p.mrp) * 100) || 0,
+    image: '/images/products/placeholder.jpg',
     rating: 5,
-  },
-  {
-    id: '2',
-    name: 'Triphala Digestive Formula',
-    slug: 'triphala-digestive-formula',
-    description: 'Gentle detox and digestive support blending Amla, Haritaki, and Bibhitaki.',
-    price: 399,
-    mrp: 499,
-    discount: 20,
-    image: '/images/products/triphala.jpg',
-    rating: 4,
-  },
-  {
-    id: '3',
-    name: 'Herbal Hair Care Oil',
-    slug: 'herbal-hair-care-oil',
-    description: 'Nourishing blend of Bhringraj and Amla for strong, healthy hair.',
-    price: 549,
-    mrp: 799,
-    discount: 31,
-    image: '/images/products/hair-oil.jpg',
-    rating: 5,
-  },
-  {
-    id: '4',
-    name: 'Turmeric Curcumin Support',
-    slug: 'turmeric-curcumin-support',
-    description: 'Powerful anti-inflammatory and antioxidant support for overall wellness.',
-    price: 599,
-    mrp: 899,
-    discount: 33,
-    image: '/images/products/turmeric.jpg',
-    rating: 5,
-  },
-];
+  }));
 
-export default function FeaturedProducts() {
   return (
     <section className="py-24 bg-white">
       <div className="container mx-auto px-4 md:px-6">
