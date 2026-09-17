@@ -11,7 +11,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 export default function CheckoutPage() {
-  const { cart, getCartTotal, clearCart } = useCart();
+  const { cart, getCartTotal, clearCart, isLoaded } = useCart();
   const router = useRouter();
   
   const [formData, setFormData] = useState({
@@ -40,6 +40,18 @@ export default function CheckoutPage() {
       router.push('/order-success');
     }, 1500);
   };
+
+  if (!isLoaded) {
+    return (
+      <>
+        <Navbar />
+        <div className="min-h-[60vh] flex flex-col items-center justify-center bg-[#FAF7EF]">
+          <h2 className="text-2xl font-semibold mb-4 text-[#17231D]">Loading checkout...</h2>
+        </div>
+        <Footer />
+      </>
+    );
+  }
 
   if (cart.length === 0) {
     return (
