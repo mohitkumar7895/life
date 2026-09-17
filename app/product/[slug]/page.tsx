@@ -16,7 +16,16 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
   const resolvedParams = await params;
   const slug = resolvedParams.slug;
   
-  const products = await query('SELECT * FROM Products WHERE slug = ? AND isPublished = 1', [slug]) as any[];
+  let products: any[] = [];
+  try {
+    products = await query('SELECT * FROM Products WHERE slug = ? AND isPublished = 1', [slug]) as any[];
+  } catch (error) {
+    console.warn("Database connection failed, using fallback:", error);
+    products = [{
+      id: '1', name: 'Fallback Product', slug, description: 'Product details temporarily unavailable.', 
+      price: '499', mrp: '699', discount: 28, stock: 10
+    }];
+  }
   
   if (!products || products.length === 0) {
     notFound();

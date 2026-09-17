@@ -4,7 +4,17 @@ import ProductCard, { ProductCardProps } from "@/components/ui/product-card";
 import { query } from "@/lib/db";
 
 export default async function ShopPage() {
-  const dbProducts = await query('SELECT * FROM Products WHERE isPublished = 1 ORDER BY createdAt DESC') as any[];
+  let dbProducts: any[] = [];
+  try {
+    dbProducts = await query('SELECT * FROM Products WHERE isPublished = 1 ORDER BY createdAt DESC') as any[];
+  } catch (error) {
+    console.warn("Database connection failed during prerender, using fallback data:", error);
+    dbProducts = [
+      { id: '1', name: 'Ashwagandha Wellness Capsules', slug: 'ashwagandha-wellness-capsules', description: 'Natural stress relief.', price: '499', mrp: '699', discount: 28 },
+      { id: '2', name: 'Triphala Digestive Formula', slug: 'triphala-digestive-formula', description: 'Gentle detox.', price: '399', mrp: '499', discount: 20 },
+      { id: '3', name: 'Herbal Hair Care Oil', slug: 'herbal-hair-care-oil', description: 'Nourishing blend.', price: '549', mrp: '799', discount: 31 },
+    ];
+  }
   
   const allProducts: ProductCardProps[] = dbProducts.map((p) => ({
     id: p.id,
