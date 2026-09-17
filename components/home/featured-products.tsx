@@ -2,6 +2,7 @@ import ProductCard, { ProductCardProps } from '@/components/ui/product-card';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { query } from '@/lib/db';
+import { getImageForSlug } from '@/lib/utils';
 
 export default async function FeaturedProducts() {
   let dbProducts: any[] = [];
@@ -25,7 +26,7 @@ export default async function FeaturedProducts() {
     price: parseFloat(p.price),
     mrp: parseFloat(p.mrp),
     discount: p.discount || Math.round(((p.mrp - p.price) / p.mrp) * 100) || 0,
-    image: '/images/products/placeholder.jpg',
+    image: getImageForSlug(p.slug),
     rating: 5,
   }));
 

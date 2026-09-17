@@ -2,6 +2,7 @@ import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
 import ProductCard, { ProductCardProps } from "@/components/ui/product-card";
 import { query } from "@/lib/db";
+import { getImageForSlug } from "@/lib/utils";
 
 export default async function ShopPage() {
   let dbProducts: any[] = [];
@@ -24,7 +25,7 @@ export default async function ShopPage() {
     price: parseFloat(p.price),
     mrp: parseFloat(p.mrp),
     discount: p.discount || Math.round(((p.mrp - p.price) / p.mrp) * 100) || 0,
-    image: '/images/products/placeholder.jpg',
+    image: getImageForSlug(p.slug),
     rating: 5,
   }));
 

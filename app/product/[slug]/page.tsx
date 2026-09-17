@@ -11,6 +11,7 @@ import {
 import { query } from "@/lib/db";
 import { notFound } from "next/navigation";
 import { ProductPageActions } from "@/components/ui/product-actions";
+import { getImageForSlug } from "@/lib/utils";
 
 export default async function ProductDetailPage({ params }: { params: Promise<{ slug: string }> | { slug: string } }) {
   const resolvedParams = await params;
@@ -41,7 +42,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
     price: parseFloat(dbProduct.price),
     mrp: parseFloat(dbProduct.mrp),
     discount: dbProduct.discount || Math.round(((dbProduct.mrp - dbProduct.price) / dbProduct.mrp) * 100) || 0,
-    image: '/images/products/placeholder.jpg', // Placeholder since DB doesn't have images yet
+    image: getImageForSlug(dbProduct.slug),
     rating: 5,
     reviews: 0,
     stock: dbProduct.stock > 0 ? 'In Stock' : 'Out of Stock',
